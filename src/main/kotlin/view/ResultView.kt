@@ -2,11 +2,14 @@ package view
 
 import domain.vo.GameResult
 
-class ResultView {
+interface ResultView {
+    fun processResult(gameResult: GameResult)
+}
+class ConsoleResultView: ResultView {
 
     val gameResults = mutableListOf<String>()
 
-    fun printResult(gameResult: GameResult) {
+    override fun processResult(gameResult: GameResult) {
         val resultString = gameResult.emojiArray.joinToString("")
         this.gameResults.add(resultString)
         gameResults.map { println(it) }

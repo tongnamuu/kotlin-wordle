@@ -2,10 +2,14 @@ package view
 
 import domain.GameString
 
-class InputView {
+interface InputView {
 
-    fun getInput(): GameString {
-        while(true) {
+    fun getInput(): GameString
+}
+
+class ConsoleInputView : InputView {
+    override fun getInput(): GameString {
+        while (true) {
             val inputWord = readLine()!!.trim()
             try {
                 return GameString(inputWord)

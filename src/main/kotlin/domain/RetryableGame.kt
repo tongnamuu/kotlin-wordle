@@ -11,7 +11,8 @@ class RetryableGame(val wordleGame: WordleGame, val resultView: ResultView, val 
 
             val gameResult = wordleGame.logic(input, answer)
 
-            resultView.printResult(gameResult)
+            resultView.processResult(gameResult)
+            currentCount++
             if (gameResult.isSuccess) {
                 break
             }

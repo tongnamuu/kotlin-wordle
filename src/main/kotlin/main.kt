@@ -1,12 +1,12 @@
 import domain.RetryableGame
 import domain.Start
 import domain.WordleGame
-import view.InputView
-import view.ResultView
+import view.ConsoleInputView
+import view.ConsoleResultView
 
-fun main(args: Array<String>) {
-    val resultView = ResultView()
-    val inputView = InputView()
+fun main() {
+    val resultView = ConsoleResultView()
+    val inputView = ConsoleInputView()
     val wordleGame = WordleGame()
     val game = RetryableGame(wordleGame, resultView, inputView)
     val start = Start()
