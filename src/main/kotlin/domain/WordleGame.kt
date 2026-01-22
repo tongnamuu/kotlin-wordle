@@ -3,7 +3,10 @@ package domain
 import domain.vo.GameResult
 
 class WordleGame() {
-    fun logic(inputWord: GameString, answer: GameString): GameResult {
+    fun logic(
+        inputWord: GameString,
+        answer: GameString,
+    ): GameResult {
         val inputWordChars = inputWord.value.toMutableList()
         val answerChars = answer.value.toMutableList()
         val emojiArray = MutableList(inputWordChars.size) { Color.GREY.colorBox }
@@ -20,7 +23,7 @@ class WordleGame() {
         inputWordChars: MutableList<Char>,
         answerChars: MutableList<Char>,
         emojiArray: MutableList<String>,
-        usedChars: MutableList<Boolean>
+        usedChars: MutableList<Boolean>,
     ): Int {
         var greenCount = 0
         for (i in inputWordChars.indices) {
@@ -39,21 +42,20 @@ class WordleGame() {
         inputWordChars: MutableList<Char>,
         emojiArray: MutableList<String>,
         answerChars: MutableList<Char>,
-        usedChars: MutableList<Boolean>
+        usedChars: MutableList<Boolean>,
     ) {
         for (i in inputWordChars.indices) {
             if (emojiArray[i] == Color.GREEN.colorBox) {
                 continue
             }
-            val j = answerChars.indices.firstOrNull {
-                !usedChars[it] && answerChars[it] == inputWordChars[i]
-            }
+            val j =
+                answerChars.indices.firstOrNull {
+                    !usedChars[it] && answerChars[it] == inputWordChars[i]
+                }
             if (j != null) {
                 emojiArray[i] = Color.YELLOW.colorBox
                 usedChars[j] = true
             }
         }
     }
-
-
 }

@@ -11,5 +11,5 @@ fun main() {
     val game = RetryableGame(wordleGame, resultView, inputView)
     val start = Start()
     val answer = start.findAnswer()
-    game.run(answer);
+    game.run(answer)
 }

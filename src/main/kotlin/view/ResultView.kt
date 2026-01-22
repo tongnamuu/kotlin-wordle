@@ -5,8 +5,8 @@ import domain.vo.GameResult
 interface ResultView {
     fun processResult(gameResult: GameResult)
 }
-class ConsoleResultView: ResultView {
 
+class ConsoleResultView : ResultView {
     val gameResults = mutableListOf<String>()
 
     override fun processResult(gameResult: GameResult) {

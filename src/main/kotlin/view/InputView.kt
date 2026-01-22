@@ -3,7 +3,6 @@ package view
 import domain.GameString
 
 interface InputView {
-
     fun getInput(): GameString
 }
 
