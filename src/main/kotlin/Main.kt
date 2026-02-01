@@ -1,5 +1,6 @@
+
+import domain.GameInitializer
 import domain.RetryableGame
-import domain.Start
 import domain.WordleGame
 import view.ConsoleInputView
 import view.ConsoleResultView
@@ -9,7 +10,7 @@ fun main() {
     val inputView = ConsoleInputView()
     val wordleGame = WordleGame()
     val game = RetryableGame(wordleGame, resultView, inputView)
-    val start = Start()
+    val start = GameInitializer()
     val answer = start.findAnswer()
     game.run(answer)
 }
