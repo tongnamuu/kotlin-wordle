@@ -7,7 +7,7 @@ interface ResultView {
 }
 
 class ConsoleResultView : ResultView {
-    val gameResults = mutableListOf<String>()
+    private val gameResults = mutableListOf<String>()
 
     override fun processResult(gameResult: GameResult) {
         val resultString = gameResult.emojiArray.joinToString("")
