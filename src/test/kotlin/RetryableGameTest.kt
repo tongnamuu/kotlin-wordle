@@ -6,6 +6,7 @@ import domain.vo.GameResult
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import view.InputView
+import view.Instruction
 import view.ResultView
 
 class RetryableGameTest {
@@ -20,7 +21,6 @@ class RetryableGameTest {
                     return wrongAnswer
                 }
             }
-
         var printResultCallCount = 0
         val mockResultView =
             object : ResultView {
@@ -28,8 +28,16 @@ class RetryableGameTest {
                     printResultCallCount++
                 }
             }
+        val mockInstruction =
+            object : Instruction {
+                override fun startGame() {
+                }
 
-        val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView)
+                override fun endGame(currentRound: Int) {
+                }
+            }
+
+        val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView, mockInstruction)
         retryableGame.run(answer)
 
         assertEquals(Constant.MAX_GAME_TRY_COUNT, printResultCallCount)
@@ -54,8 +62,16 @@ class RetryableGameTest {
                     printResultCallCount++
                 }
             }
+        val mockInstruction =
+            object : Instruction {
+                override fun startGame() {
+                }
 
-        val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView)
+                override fun endGame(currentRound: Int) {
+                }
+            }
+
+        val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView, mockInstruction)
         retryableGame.run(answer)
 
         assertEquals(1, printResultCallCount)
