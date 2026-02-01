@@ -9,6 +9,7 @@ interface InputView {
 class ConsoleInputView : InputView {
     override fun getInput(): GameString {
         while (true) {
+            println("정답을 입력해주세요.")
             val inputWord = readLine()!!.trim()
             try {
                 return GameString(inputWord)
