@@ -40,11 +40,13 @@ class RetryableGameTest {
         val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView, mockInstruction)
         retryableGame.run(answer)
 
+        // then
         assertEquals(Constant.MAX_GAME_TRY_COUNT, printResultCallCount)
     }
 
     @Test
     fun `정답을 맞추면 즉시 종료한다`() {
+        // given
         val wrongAnswer = GameString("right")
         val answer = GameString("right")
 
@@ -71,9 +73,11 @@ class RetryableGameTest {
                 }
             }
 
+        // when
         val retryableGame = RetryableGame(WordleGame(), mockResultView, mockInputView, mockInstruction)
         retryableGame.run(answer)
 
+        // then
         assertEquals(1, printResultCallCount)
     }
 }
