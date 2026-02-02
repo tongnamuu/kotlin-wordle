@@ -62,7 +62,7 @@ class WordleGameTest {
     }
 
     @Test
-    fun `오류케이스 추가`() {
+    fun `중복된 알파벳이 input에 더 많다면 answer 에 있는 개수보다 큰 경우는 Grey 로 처리한다 `() {
         val input = GameString("uuuuo")
         val answer = GameString("undeu")
         val game = WordleGame()
@@ -80,7 +80,7 @@ class WordleGameTest {
     }
 
     @Test
-    fun `반복문 break 오류케이스 추가`() {
+    fun `answer 문자열에서 사용되지 않았고 가장 먼저 등장하는 인덱스를 찾아서 yellow 로 처리한다`() {
         val input = GameString("ououo")
         val answer = GameString("unueu")
         val game = WordleGame()
@@ -98,7 +98,7 @@ class WordleGameTest {
     }
 
     @Test
-    fun `반복문 break 오류케이스 추가2`() {
+    fun `answer 문자열에서 사용되지 않았고 가장 먼저 등장하는 인덱스를 찾아서 yellow 로 처리한다 2`() {
         val input = GameString("unueu")
         val answer = GameString("ououo")
         val game = WordleGame()
@@ -116,7 +116,7 @@ class WordleGameTest {
     }
 
     @Test
-    fun `모두 노란색`() {
+    fun `모든 알파벳이 인덱스가 다른 위치에 존재한다면 모두 노란색인 결과를 반환한다`() {
         val input = GameString("abcde")
         val answer = GameString("badec")
         val game = WordleGame()
