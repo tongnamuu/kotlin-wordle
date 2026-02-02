@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
 class WordleGameTest {
-
     @Test
     fun `정답을 맞추면 모두 초록색이다`() {
         val input = GameString("under")
@@ -133,5 +132,4 @@ class WordleGameTest {
         val result = game.logic(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
-
 }
