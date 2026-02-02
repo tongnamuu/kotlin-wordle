@@ -1,10 +1,10 @@
-import domain.Color
-import domain.GameString
-import domain.WordleGame
+package domain
+
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
-class MainKtTest {
+class WordleGameTest {
+
     @Test
     fun `정답을 맞추면 모두 초록색이다`() {
         val input = GameString("under")
@@ -133,4 +133,5 @@ class MainKtTest {
         val result = game.logic(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
+
 }
