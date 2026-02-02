@@ -12,7 +12,7 @@ fun main() {
     val instruction = ConsoleInstruction()
     val wordleGame = WordleGame()
     val game = RetryableGame(wordleGame, resultView, inputView, instruction)
-    val start = GameInitializer()
-    val answer = start.findAnswer()
+    val gameInitializer = GameInitializer()
+    val answer = gameInitializer.findAnswer()
     game.run(answer)
 }
