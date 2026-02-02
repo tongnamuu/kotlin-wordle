@@ -2,7 +2,7 @@ package view
 
 import domain.vo.GameResult
 
-interface ResultView {
+fun interface ResultView {
     fun processResult(gameResult: GameResult)
 }
 

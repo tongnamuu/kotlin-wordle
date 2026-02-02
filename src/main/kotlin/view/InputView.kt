@@ -2,7 +2,7 @@ package view
 
 import domain.GameString
 
-interface InputView {
+fun interface InputView {
     fun getInput(): GameString
 }
 

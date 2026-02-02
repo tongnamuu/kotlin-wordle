@@ -1,8 +1,8 @@
+
 import domain.Constant
 import domain.GameString
 import domain.RetryableGame
 import domain.WordleGame
-import domain.vo.GameResult
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import view.InputView
@@ -15,19 +15,9 @@ class RetryableGameTest {
         val wrongAnswer = GameString("wrong")
         val answer = GameString("right")
 
-        val mockInputView =
-            object : InputView {
-                override fun getInput(): GameString {
-                    return wrongAnswer
-                }
-            }
+        val mockInputView = InputView { wrongAnswer }
         var printResultCallCount = 0
-        val mockResultView =
-            object : ResultView {
-                override fun processResult(gameResult: GameResult) {
-                    printResultCallCount++
-                }
-            }
+        val mockResultView = ResultView { printResultCallCount++ }
         val mockInstruction =
             object : Instruction {
                 override fun startGame() {
@@ -50,20 +40,10 @@ class RetryableGameTest {
         val wrongAnswer = GameString("right")
         val answer = GameString("right")
 
-        val mockInputView =
-            object : InputView {
-                override fun getInput(): GameString {
-                    return wrongAnswer
-                }
-            }
+        val mockInputView = InputView { wrongAnswer }
 
         var printResultCallCount = 0
-        val mockResultView =
-            object : ResultView {
-                override fun processResult(gameResult: GameResult) {
-                    printResultCallCount++
-                }
-            }
+        val mockResultView = ResultView { printResultCallCount++ }
         val mockInstruction =
             object : Instruction {
                 override fun startGame() {
