@@ -12,7 +12,9 @@ class ConsoleResultView : ResultView {
     override fun processResult(gameResult: GameResult) {
         val resultString = gameResult.emojiArray.joinToString("")
         this.gameResults.add(resultString)
+        println()
         gameResults.forEach { println(it) }
+        println()
         if (gameResult.isSuccess) {
             println("성공입니다!")
         }
