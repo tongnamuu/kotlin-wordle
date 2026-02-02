@@ -18,7 +18,7 @@ class WordleGameTest {
                 Color.GREEN.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
 
         Assertions.assertThat(result).isEqualTo(expected)
     }
@@ -37,7 +37,7 @@ class WordleGameTest {
                 Color.YELLOW.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
 
         Assertions.assertThat(result).isEqualTo(expected)
     }
@@ -56,7 +56,7 @@ class WordleGameTest {
                 Color.GREY.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
 
         Assertions.assertThat(result).isEqualTo(expected)
     }
@@ -75,7 +75,7 @@ class WordleGameTest {
                 Color.GREY.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
 
@@ -93,7 +93,7 @@ class WordleGameTest {
                 Color.GREY.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
 
@@ -111,7 +111,7 @@ class WordleGameTest {
                 Color.GREY.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
 
@@ -129,7 +129,7 @@ class WordleGameTest {
                 Color.YELLOW.colorBox,
             )
 
-        val result = game.logic(input, answer).emojiArray
+        val result = game.calculateResult(input, answer).emojiArray
         Assertions.assertThat(result).isEqualTo(expected)
     }
 }

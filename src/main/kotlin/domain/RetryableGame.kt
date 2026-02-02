@@ -10,9 +10,7 @@ class RetryableGame(val wordleGame: WordleGame, val resultView: ResultView, val 
         instruction.startGame()
         while (currentCount < Constant.MAX_GAME_TRY_COUNT) {
             val input = input.getInput()
-
-            val gameResult = wordleGame.logic(input, answer)
-
+            val gameResult = wordleGame.calculateResult(input, answer)
             resultView.processResult(gameResult)
             currentCount++
             if (gameResult.isSuccess) {
